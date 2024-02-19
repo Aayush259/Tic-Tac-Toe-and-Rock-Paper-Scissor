@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Background-Color: #201658;
+    --Button-Color: #0d6efd;
+    --Hover-State-Color: #3988fd;
+    --Text-Color: #fff;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    overflow-x: hidden;
+    background-color: aliceblue;
+}
+
+#header, #footer {
+    background-color: var(--Background-Color);
+    color: var(--Text-Color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    width: 100vw;
+}
+
+#header * {
+    margin-left: 20px;
+}
+
+#header button {
+    width: 30px;
+    height: 30px;
+    border-radius: 35%;
+    line-height: 18px;
+    padding: 5px;
+}
+
+button {
+    background-color: var(--Button-Color);
+    color: var(--Text-Color);
+    font-size: 1.3rem;
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+}
+
+button:hover {
+    background-color: var(--Hover-State-Color);
+}
+
+button:focus {
+    outline: 0;
+    box-shadow: 0 0 0.2rem 0.3rem var(--Background-Color);
+}
+
+#return-back-btn:focus {
+    box-shadow: 0 0 0.1rem 0.1rem var(--Text-Color);
+}
+
+#footer {
+    justify-content: center;
+    gap: 8px;
+    position: absolute;
+    bottom: 0;
+}
+
+.foot-image {
+    height: 30px;
+    border-radius: 50%;
+}
