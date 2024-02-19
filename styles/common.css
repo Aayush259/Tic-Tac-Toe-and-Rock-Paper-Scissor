@@ -27,7 +27,7 @@ body {
     width: 100vw;
 }
 
-#header * {
+#header > * {
     margin-left: 20px;
 }
 

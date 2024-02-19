@@ -10,7 +10,18 @@
 }
 
 main {
-    margin-top: 20vmin;
+    margin-top: 15vmin;
+    width: 100vw;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.select {
+    margin-bottom: 4vmin;
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .play-options {
@@ -22,13 +33,13 @@ main {
     align-items: center;
 }
 
-.game-option {
+.game-option, .mode {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.game-option img {
+.game-option img, .mode img {
     border-radius: 8px;
 }
 
@@ -36,7 +47,7 @@ main {
     border-radius: 50%;
 }
 
-.game-option button {
+.game-option button, .mode button {
     width: 100%;
     border-radius: 10px;
 }
