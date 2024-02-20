@@ -15,23 +15,21 @@
 <body>
     <header id="header">
         <h2>Let's Play</h2>
+        <img src="./images/footer-image.png" alt="Author's Image" height="30">
     </header>
     <main id="main">
         <div class="play-options">
             <div class="tic-tac-toe game-option">
-                <img src="./images/tic-tac-toe.png" alt="Tic-Tac-Toe Image" height="150">
-                <button id="Tic-Tac-Toe-Btn">Play</button>
+                <img src="./images/tic-tac-toe.png" alt="Tic-Tac-Toe Image" height="150" width="150">
+                <button id="Tic-Tac-Toe-Btn" onclick="ActivateTicTacToe()">Play</button>
             </div>
-            <div class="rock-paper-scissor game-option">
-                <img src="./images/rock-paper-scissor.jpeg" alt="Rock-Paper-Scissor Image" height="150">
+            <div class="rock-paper-scissor game-option negative-margin">
+                <img src="./images/rock-paper-scissor.jpeg" alt="Rock-Paper-Scissor Image" height="150" width="150">
                 <button id="Rock-Paper-Scissor-Btn">Play</button>
             </div>
         </div>
     </main>
-    <footer id="footer">
-            <img src="./images/footer-image.png" alt="Author's Image" class="foot-image" height="30">
-            <p>AK<sup>2</sup></p>
-    </footer>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/tic-tac-toe.js"></script>
 </body>
 </html>

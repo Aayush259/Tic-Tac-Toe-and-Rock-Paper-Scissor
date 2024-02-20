@@ -3,6 +3,9 @@
     --Button-Color: #0d6efd;
     --Hover-State-Color: #3988fd;
     --Text-Color: #fff;
+    --Border-Color: #c38f4d;
+    --Game-Background-Color: #bdfabd;
+    --Game-Button-Color: #029302;
 }
 
 #header {
@@ -10,7 +13,7 @@
 }
 
 main {
-    margin-top: 15vmin;
+    margin-top: 10vmin;
     width: 100vw;
     max-width: 900px;
     margin-left: auto;
@@ -50,4 +53,151 @@ main {
 .game-option button, .mode button {
     width: 100%;
     border-radius: 10px;
+}
+
+.symbol {
+    color: red;
+    font-weight: bolder;
+    font-size: 50px;
+    height: 70px;
+    width: 70px;
+    background-color: var(--Text-Color);
+    margin-top: 50px;
+    border-radius: 50%;
+}
+
+.tic-tac-toe-button-container {
+    width: 50vmin;
+    height: 50vmin;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    max-width: 300px;
+    max-height: 300px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background-color: var(--Game-Background-Color);
+    border: 15px solid var(--Border-Color);
+    border-radius: 10px;
+}
+
+.play-button {
+    background-color: var(--Game-Button-Color);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    padding: 0;
+    user-select: none;
+    cursor: pointer;
+    color: var(--Text-Color);
+    transition: all 0.1s ease-in-out;
+}
+
+.play-button:focus {
+    outline: 0;
+    box-shadow: none;
+    transform: scale(1.1);
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.play-button:active {
+    box-shadow: none;
+    transform: scale(1);
+    border: none;
+    border-radius: 0;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
+.result {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px auto 50px auto;
+    padding: 10px;
+    border: 15px solid var(--Border-Color);
+    border-radius: 15px;
+    background-color: var(--Game-Button-Color);
+    color: var(--Text-Color);
+    font-size: 1.5rem;
+}
+
+.result .buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.result button {
+    border-radius: 8px;
+    border: 2px solid var(--Text-Color);
+}
+
+.result button:focus {
+    outline: 0;
+    box-shadow: 0 0 0.2rem 0.3rem var(--Game-Background-Color);
+}
+
+@media only screen and (max-width: 500px) {
+    .play-options {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .play-options img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #Tic-Tac-Toe-Btn {
+        width: 150px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 390px) {
+
+    .tic-tac-toe-button-container {
+        width: 95vmin;
+        height: 95vmin;
+    }
+
+    .tic-tac-toe {
+        width: 90vmin;
+        height: 90vmin;
+    }
+
+    .result {
+        width: 95%;
+    }
+
+    .negative-margin {
+        margin-top: -20vmin;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .play-button {
+        font-size: 1.5rem;
+    }
+
+    .negative-margin {
+        margin-top: 10vmin;
+    }
 }
