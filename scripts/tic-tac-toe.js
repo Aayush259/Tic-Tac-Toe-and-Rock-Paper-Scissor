@@ -59,7 +59,81 @@ function ActivateComputerMode() {
     This function Activate player mode of tic-tac-toe game.
 */
 function ActivatePlayerMode() {
-    console.log('PlayerMode is in development process.');
+
+    // Getting tic-tac-toe container.
+    const TicTacToeContainer = document.querySelector('.tic-tac-toe');
+
+    // Displaying game buttons for the players to play.
+    TicTacToeContainer.innerHTML = `
+    <div class="tic-tac-toe-button-container">
+        <button class="play-button">&nbsp;</button>
+        <button class="play-button">&nbsp;</button>
+        <button class="play-button">&nbsp;</button>
+        <button class="play-button">&nbsp;</button>
+        <button class="play-button">&nbsp;</button>
+        <button class="play-button">&nbsp;</button>
+        <button class="play-button">&nbsp;</button>
+        <button class="play-button">&nbsp;</button>
+        <button class="play-button">&nbsp;</button>
+    </div>
+    `;
+    
+    // Setting up the turn of first player to true.
+    let Player1Turn = true;
+
+    // Getting play-buttons.
+    const PlayButtons = document.querySelectorAll('.play-button');
+
+    // Adding event listener to each game button so that if the button is clicked then check for player1 turn and play accordingly.
+    PlayButtons.forEach(button => {
+        button.addEventListener('click', () => {
+
+            // If player turn is true then set the textContent of the button to 'X' and set the player1's turn to false and finally check for a winner.
+            if (Player1Turn) {
+                button.textContent = 'X';
+                Player1Turn = false;
+
+                // If player1 wins then disable all buttons and show results accordingly.
+                if (CheckWinner(PlayButtons)) {
+                    DisableButtons(PlayButtons);
+                    ShowResults('Player X won', 'TTT-P');
+                    return;
+                };
+
+            } else {
+                button.textContent = 'O';
+                Player1Turn = true;
+
+                // If player2 wins then disable all buttons and show results accordingly.
+                if (CheckWinner(PlayButtons)) {
+                    DisableButtons(PlayButtons);
+                    ShowResults('Player O won', 'TTT-P');
+                    return;
+                };
+
+            }
+
+            // Disable the clicked button.
+            button.disabled = true;
+        })
+
+        // Initializing the number to disabled buttons to zero.
+        let numberOfDisabledButtons = 0;
+
+        // Iterating over each game button. If the button is disabled then increment the value of numberOfDisabledButtons by 1.
+        PlayButtons.forEach(button => {
+
+            if (button.disabled) {
+                numberOfDisabledButtons += 1;
+            }
+        });
+
+        // If all buttons are disabled then show the tie message on screen.
+        if (numberOfDisabledButtons === 9) {
+            ShowResults(`It's a tie!`, 'TTT-P');
+            return;
+        }
+    })
 };
 
 /*

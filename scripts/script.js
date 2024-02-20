@@ -51,6 +51,9 @@ function PlayAgain(btnElement) {
     // Getting Main element.
     const Main = document.getElementById('main');
 
+    // Gettin Result element.
+    const Result = document.querySelector('.result');
+
     // If the game is tic-tac-toe then this if code will be executed.
     if (btnElement.classList.value === 'TTT') {
 
@@ -74,5 +77,12 @@ function PlayAgain(btnElement) {
             })
         })
         
+    } else if (btnElement.classList.value === 'TTT-P') {
+
+        // Remove result element from screen.
+        Result.remove();
+
+        // Activate player mode again.
+        ActivatePlayerMode();
     }
 };
