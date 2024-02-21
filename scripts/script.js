@@ -14,6 +14,10 @@ const AddReturnBtn = () => {
     // Placing the Return_Back element as the first child inside header.
     Header.insertBefore(ReturnBack, Header.firstChild);
 
+    ReturnBack.addEventListener('click', () => {
+        location.reload();
+    })
+
 };
 
 const DisableButtons = (arrayOfButtons) => {
