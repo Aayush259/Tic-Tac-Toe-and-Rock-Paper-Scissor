@@ -1,0 +1,194 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.score {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    padding: 1vmin;
+}
+
+.fist {
+    margin-top: 1vmin;
+    margin-bottom: 1vmin;
+    padding-top: 2vmin;
+    height: 25vmin;
+    width: 25vmin;
+    font-size: 15vmin;
+    text-align: center;
+    background-color: rgb(170, 119, 170);
+    border-radius: 4px;
+}
+
+.computerFist {
+    padding-left: 3vmin;
+}
+
+.userFist {
+    padding-right: 3vmin;
+}
+
+.computerFist > p, .userFist > p {
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.computerFist > p {
+    transform: rotate(-90deg) rotateX(180deg);
+}
+
+.userFist > p {
+    transform: rotate(-90deg);
+}
+
+.Cfist {
+    animation-name: computerFistShake;
+}
+
+.Ufist {
+    animation-name: userFistShake;
+}
+
+@keyframes computerFistShake {
+
+    from {
+        transform: rotate(-99deg) rotateX(180deg);
+    }
+    to {
+        transform: rotate(-81deg) rotateX(180deg);
+    }
+
+}
+
+@keyframes userFistShake {
+
+    from {
+        transform: rotate(-81deg);
+    }
+    to {
+        transform: rotate(-99deg);
+    }
+
+}
+
+.computer-score, .user-score {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.computer-score > p, .user-score > p {
+    margin: 1vmin;
+    font-size: 4vmin;
+}
+
+.message {
+    font-size: 4vmin;
+}
+
+.button-container {
+    margin-top: 3vmin;
+    margin-bottom: 3vmin;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 300px;
+}
+
+.home {
+    margin-top: 21px;
+}
+
+.button-container > button, .restart, .newGame, .home {
+    height: 10vmin;
+    width: 10vmin;
+    font-size: 6vmin;
+    border: none;
+    border-radius: 2vmin;
+    background-color: rgb(170, 119, 170);
+    cursor: pointer;
+    transition: all;
+    transition-duration: 0.1s;
+}
+
+.button-container > button:hover, .restart:hover, .newGame:hover, .home:focus {
+    opacity: 0.8;
+}
+
+.button-container > button:focus, .restart:focus, .newGame:focus, .home:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(82, 8, 218);
+    background-color: rgb(170, 119, 170) !important;
+    transform: scale(1.1);
+}
+
+.restart, .newGame, .home {
+    width: 20vmin !important;
+    height: 8vmin !important;
+    background-color: rgb(135, 9, 238) !important;
+    color: white !important;
+    font-size: 3.5vmin !important;
+    border-radius: 5vmin !important;
+    margin-bottom: 3vmin;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 10vmin;
+    padding: 3vmin;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 4vmin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.newGame {
+    margin-top: 3vmin;
+}
+
+.WinningMessage {
+    margin: 4vmin;
+}
+
+.none-display {
+    display: none !important;
+}
+
+@media only screen and (max-width: 570px) {
+    .home {
+        margin-top: 18px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    main {
+        margin-top: 20vmin;
+    }
+
+    .result {
+        margin-top: 20vmin;
+    }
+
+    .home {
+        margin-top: 13px;
+    }
+
+    .newGame, .home {
+        width: 30vmin;
+    }
+}
